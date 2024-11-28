@@ -1,0 +1,131 @@
+/* Estilo Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+    text-align: center;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #282c34;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    height: 60px;
+}
+
+h1 {
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+/* Contêiner das Mesas */
+.mesas-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.mesa {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.mesa:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos do botão */
+.status-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%;
+}
+
+/* Estilo do status Livre */
+.livre {
+    background-color: #28a745;
+    color: white;
+}
+
+.livre:hover {
+    background-color: #218838;
+}
+
+/* Estilo do status Ocupado */
+.ocupado {
+    background-color: #dc3545;
+    color: white;
+}
+
+.ocupado:hover {
+    background-color: #c82333;
+}
+
+/* Mensagem */
+/* Caixa de Alerta */
+.mensagem {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f39c12; /* Cor de fundo amarela */
+    color: white; /* Cor do texto */
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 9999; /* Garante que o alerta fique sobre outros elementos */
+}
+
+/* Quando a caixa de mensagem estiver visível */
+.mensagem.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Adicionando um efeito de fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+
